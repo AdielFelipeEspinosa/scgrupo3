@@ -29,10 +29,10 @@ class CreateUsuariosTable extends Migration
             $table->string('celular_usuario', 16)->nullable()->default(null);
             $table->string('direccion_usuario', 80);
             $table->string('password_usuario', 100);
-            $table->dateTime('registro_usuario')->default(null);
-            $table->string('foto_usuario', 80);
+            $table->dateTime('registro_usuario')->nullable()->default(null);
+            $table->string('foto_usuario', 80)->nullable();
             $table->integer('id_municipio_usuario')->unsigned();
-            $table->integer('id_perfil_usuario')->unsigned();
+            $table->integer('id_perfil_usuario')->unsigned()->default(1);
 
 
 
