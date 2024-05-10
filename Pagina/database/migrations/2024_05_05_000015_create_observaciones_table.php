@@ -44,7 +44,7 @@ class CreateObservacionesTable extends Migration
                 ->onUpdate('no action');
 
             $table->foreign('id_usuario_observacion', 'id_usuario_observacion')
-                ->references('id_usuario')->on('usuarios')
+                ->references('id_usuario')->on('users')
                 ->onDelete('no action')
                 ->onUpdate('no action');
         });

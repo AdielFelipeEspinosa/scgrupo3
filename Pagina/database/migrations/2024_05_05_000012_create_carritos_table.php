@@ -38,7 +38,7 @@ class CreateCarritosTable extends Migration
                 ->onUpdate('no action');
 
             $table->foreign('id_usuario_carrito', 'id_usuario_carrito')
-                ->references('id_usuario')->on('usuarios')
+                ->references('id_usuario')->on('users')
                 ->onDelete('no action')
                 ->onUpdate('no action');
         });

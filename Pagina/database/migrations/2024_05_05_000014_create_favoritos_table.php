@@ -37,7 +37,7 @@ class CreateFavoritosTable extends Migration
                 ->onUpdate('no action');
 
             $table->foreign('id_usuario_favorito', 'id_usuario_favorito')
-                ->references('id_usuario')->on('usuarios')
+                ->references('id_usuario')->on('users')
                 ->onDelete('no action')
                 ->onUpdate('no action');
         });
