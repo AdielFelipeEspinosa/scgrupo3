@@ -13,7 +13,7 @@
                     <div class="col-1 align-self-center">
                         <a href="#multi-item-example" role="button" data-bs-slide="prev">
                             <i class="text-dark fas fa-chevron-left"></i>
-                            <span class="sr-only">Previous</span>
+                            <span class="sr-only">Anterior</span>
                         </a>
                     </div>
                     <!--End Controls-->
@@ -95,7 +95,7 @@
                     <div class="col-1 align-self-center">
                         <a href="#multi-item-example" role="button" data-bs-slide="next">
                             <i class="text-dark fas fa-chevron-right"></i>
-                            <span class="sr-only">Next</span>
+                            <span class="sr-only">Siguiente</span>
                         </a>
                     </div>
                     <!--End Controls-->
@@ -105,7 +105,7 @@
             <div class="col-lg-7 mt-5">
                 <div class="card">
                     <div class="card-body">
-                        <h1 class="h2">Active Wear</h1>
+                        <h1 class="h2">Ropa Activa</h1>
                         <p class="h3 py-2">$25.00</p>
                         <p class="py-2">
                             <i class="fa fa-star text-warning"></i>
@@ -113,37 +113,34 @@
                             <i class="fa fa-star text-warning"></i>
                             <i class="fa fa-star text-warning"></i>
                             <i class="fa fa-star text-secondary"></i>
-                            <span class="list-inline-item text-dark">Rating 4.8 | 36 Comments</span>
+                            <span class="list-inline-item text-dark">Clasificación 4.8 | 36 Comentarios</span>
                         </p>
                         <ul class="list-inline">
                             <li class="list-inline-item">
-                                <h6>Brand:</h6>
+                                <h6>Marca: </h6>
                             </li>
                             <li class="list-inline-item">
-                                <p class="text-muted"><strong>Easy Wear</strong></p>
+                                <p class="text-muted"><strong>Fácil de llevar</strong></p>
                             </li>
                         </ul>
 
                         <h6>Description:</h6>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod temp incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse. Donec condimentum elementum convallis. Nunc sed orci a diam ultrices aliquet interdum quis nulla.</p>
+                        <p>No te compliques.</p>
                         <ul class="list-inline">
                             <li class="list-inline-item">
-                                <h6>Avaliable Color :</h6>
+                                <h6>Color disponible: </h6>
                             </li>
                             <li class="list-inline-item">
-                                <p class="text-muted"><strong>White / Black</strong></p>
+                                <p class="text-muted"><strong>Blanco / Negro</strong></p>
                             </li>
                         </ul>
 
-                        <h6>Specification:</h6>
+                        <h6>Especificación: </h6>
                         <ul class="list-unstyled pb-3">
-                            <li>Lorem ipsum dolor sit</li>
-                            <li>Amet, consectetur</li>
-                            <li>Adipiscing elit,set</li>
-                            <li>Duis aute irure</li>
-                            <li>Ut enim ad minim</li>
-                            <li>Dolore magna aliqua</li>
-                            <li>Excepteur sint</li>
+                            <li>Secado rápido.</li>
+                            <li>Liviana.</li>
+                            <li>Costuras fuertes.</li>
+                            <li>Elegante.</li>
                         </ul>
 
                         <form action="" method="GET">
@@ -163,7 +160,7 @@
                                 <div class="col-auto">
                                     <ul class="list-inline pb-3">
                                         <li class="list-inline-item text-right">
-                                            Quantity
+                                            Cantidad
                                             <input type="hidden" name="product-quanity" id="product-quanity" value="1">
                                         </li>
                                         <li class="list-inline-item"><span class="btn btn-success" id="btn-minus">-</span></li>
@@ -174,10 +171,10 @@
                             </div>
                             <div class="row pb-3">
                                 <div class="col d-grid">
-                                    <button type="submit" class="btn btn-success btn-lg" name="submit" value="buy">Buy</button>
+                                    <button type="submit" class="btn btn-success btn-lg" name="submit" value="buy">Comprar</button>
                                 </div>
                                 <div class="col d-grid">
-                                    <button type="submit" class="btn btn-success btn-lg" name="submit" value="addtocard">Add To Cart</button>
+                                    <button type="submit" class="btn btn-success btn-lg" name="submit" value="addtocard">Añadir a la cesta</button>
                                 </div>
                             </div>
                         </form>
