@@ -2,16 +2,21 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Municipio;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Validation\ValidationException;
+
 class LoginController extends Controller
 {
     public function indexRegister()
     {
-        return view('auth.register');
+        $municipios = Municipio::all();
+        return view('auth.register', compact('municipios'));
     }
 
     public function indexLogin()
@@ -21,6 +26,16 @@ class LoginController extends Controller
 
     public function postRegistration(Request $request)
     {
+        Validator::make($request->all(), [
+            'login_usuario' => 'required',
+            'nombre_usuario' => 'required',//Unico en todos los usuarios |unique:users, nombre_usuario
+            'email_usuario' => 'required',
+            'celular_usuario' => 'required',
+            'direccion_usuario' => 'required',
+            'id_municipio_usuario' => 'required',
+            'password' => 'required|min:8',
+            'password_confirmation' => 'required|same:password'//Verificar si el campo de contraseña es el mismo
+        ])->validate();
 
         $user = new User();
 
@@ -35,7 +50,7 @@ class LoginController extends Controller
 
         $user->save();
 
-        return redirect('login');
+        return redirect()->route('login')->withSuccess('Registrado Correctamente :D');
     }
 
     public function logear(Request $request)
@@ -50,19 +65,21 @@ class LoginController extends Controller
 
             $request->session()->regenerate();
 
-            return redirect()->intended('index');
+            return redirect()->intended('index')
+            ->withSuccess('Logueado Correctamente :D');
+
         } else {
-            return redirect('login');
+            return redirect('login')->withMessage('Colocaste credenciales invalidas :c');
         }
     }
 
     public function logout(Request $request)
     {
-        Auth::logout();
 
+        Auth::logout();
         $request->session()->invalidate();
         $request->session()->regenerateToken();
 
-        return redirect(route('idenx'));
+        return redirect('index')->withSuccess('Ha salido de la cuenta :D');
     }
 }

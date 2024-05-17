@@ -17,9 +17,12 @@ rounded-lg shadow-lg">
     text-lg placeholder-gray-900 p-2 my-2 focus:bg-white" placeholder="Contraseña"
     id="password" name="password">
 
+    <label class="form-check-label" for="gridCheck">
+      <a href="/register">¿No tienes cuenta?. ¡Crea una!</a>
+    </label>
+    
     <button type="submit" class="rounded-md bg-indigo-500 w-full text-lg
     text-white font-semibold p-2 my-3 hover:bg-indigo-600">Send</button>
-
 
   </form>
 

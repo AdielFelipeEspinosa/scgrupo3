@@ -15,6 +15,7 @@ class User extends Authenticatable
     protected $table = 'users';
 
     protected $primaryKey = "id_usuario";
+
     protected $fillable = [
         'login_usuario',
         'nombre_usuario',
@@ -27,5 +28,6 @@ class User extends Authenticatable
         'id_municipio_usuario',
         'id_perfil_usuario'
     ];
-    protected $hidden = ['id_usuario'];
+    protected $hidden = ['password'];
+
 }

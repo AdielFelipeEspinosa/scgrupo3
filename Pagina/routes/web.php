@@ -15,4 +15,6 @@ Route::post('logear', 'App\Http\Controllers\LoginController@logear')->name('logi
 Route::get('register', 'App\Http\Controllers\LoginController@indexRegister')->name('register');
 Route::post('registrar','App\Http\Controllers\LoginController@postRegistration')->name('register.post');
 
+Route::get('logout', 'App\Http\Controllers\LoginController@logout')->name('logout');
+
 Route::post('/privado')->middleware('auth')->name('privado');
