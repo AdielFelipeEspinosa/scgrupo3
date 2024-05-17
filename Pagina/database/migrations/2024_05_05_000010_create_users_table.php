@@ -4,13 +4,13 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateUsuariosTable extends Migration
+class CreateUsersTable extends Migration
 {
     /**
      * Schema table name to migrate
      * @var string
      */
-    public $tableName = 'usuarios';
+    public $tableName = 'users';
 
     /**
      * Run the migrations.
@@ -28,11 +28,11 @@ class CreateUsuariosTable extends Migration
             $table->string('email_usuario', 80);
             $table->string('celular_usuario', 16)->nullable()->default(null);
             $table->string('direccion_usuario', 80);
-            $table->string('password_usuario', 100);
-            $table->dateTime('registro_usuario')->default(null);
-            $table->string('foto_usuario', 80);
+            $table->string('password', 100);
+            $table->dateTime('registro_usuario')->nullable()->default(null);
+            $table->string('foto_usuario', 80)->nullable();
             $table->integer('id_municipio_usuario')->unsigned();
-            $table->integer('id_perfil_usuario')->unsigned();
+            $table->integer('id_perfil_usuario')->unsigned()->default(1); 
 
 
 

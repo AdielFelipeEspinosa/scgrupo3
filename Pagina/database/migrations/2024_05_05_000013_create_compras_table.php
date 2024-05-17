@@ -33,7 +33,7 @@ class CreateComprasTable extends Migration
 
 
             $table->foreign('id_usuario_compra', 'id_usuario_compra')
-                ->references('id_usuario')->on('usuarios')
+                ->references('id_usuario')->on('users')
                 ->onDelete('no action')
                 ->onUpdate('no action');
         });
