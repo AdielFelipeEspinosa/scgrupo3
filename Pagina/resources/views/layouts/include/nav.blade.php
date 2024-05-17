@@ -91,8 +91,18 @@ use App\Models\User;
                 </div>
                 @break
                 @case(2)
-                <a href="/Tecnico" class="nav-item nav-link">Tecnico</a>
-                <a href="/AdministrarTickets" class="nav-item nav-link">Administrar Tickets</a>
+                <div>
+                    <div class="dropdown">
+                        <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Cliente
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                            <a class="dropdown-item" href="#">Cosas de Cliente 1</a>
+                            <a class="dropdown-item" href="#">Cosas de Cliente 2</a>
+                            <a class="dropdown-item" href="#">Cosas de Cliente 3</a>
+                        </div>
+                    </div>
+                </div>
                 @break
                 @default
                 @endswitch

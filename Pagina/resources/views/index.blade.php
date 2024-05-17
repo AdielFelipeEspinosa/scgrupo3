@@ -1,4 +1,4 @@
-io Electrónico@extends('layouts.include')
+@extends('layouts.include')
 @section('content')
 
 <!-- Start Banner Hero -->

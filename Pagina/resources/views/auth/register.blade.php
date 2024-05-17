@@ -44,19 +44,19 @@ rounded-lg shadow-lg">
     $errors->first('direccion_usuario') }}</span>
     @endif
 
-    <div class="border border-gray-200 rounded-md bg-gray-200 w-full text-lg placeholder-gray-900 p-2 my-2 focus:bg-white">
-    <select name="id_municipio_usuario" id="id_municipio_usuario" class="bg-gray-200 focus:bg-white{{ $errors->has('id_municipio_usuario') ? ' is-invalid' : '' }}">
-        <option value="" disabled selected>Selecciona el Municipio</option>
+    <div>
+      <select name="id_municipio_usuario" id="id_municipio_usuario" class="form-select border border-gray-200 rounded-md bg-gray-200 w-full text-lg placeholder-gray-900 p-2 my-2 focus:bg-white ">
+        <option value="" disabled selected >Selecciona el Municipio</option>
         @foreach($municipios as $municipio)
-            <option value="{{ $municipio->id }}">{{ $municipio->nombre_municipio }}</option>
+        <option value="{{ $municipio->id_municipio }}">{{ $municipio->nombre_municipio }}</option>
         @endforeach
-    </select>
-    @if ($errors->has('id_municipio_usuario'))
-        <div class="invalid-feedback">
-            {{ $errors->first('id_municipio_usuario') }}
-        </div>
-    @endif
-</div>
+      </select>
+      @if ($errors->has('id_municipio_usuario'))
+      <div class="invalid-feedback">
+        {{ $errors->first('id_municipio_usuario') }}
+      </div>
+      @endif
+    </div>
 
     <input type="password" class="border border-gray-200 rounded-md bg-gray-200 w-full
     text-lg placeholder-gray-900 p-2 my-2 focus:bg-white" placeholder="Contraseña" id="password" name="password">

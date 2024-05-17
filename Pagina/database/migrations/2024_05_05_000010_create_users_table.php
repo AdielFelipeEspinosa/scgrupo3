@@ -32,7 +32,7 @@ class CreateUsersTable extends Migration
             $table->dateTime('registro_usuario')->nullable()->default(null);
             $table->string('foto_usuario', 80)->nullable();
             $table->integer('id_municipio_usuario')->unsigned();
-            $table->integer('id_perfil_usuario')->unsigned()->default(1); 
+            $table->integer('id_perfil_usuario')->unsigned()->default(2); 
 
 
 
