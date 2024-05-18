@@ -23,6 +23,18 @@ class Users extends Seeder
                 'registro_usuario' => now(),
                 'id_municipio_usuario' => 1,
                 'id_perfil_usuario' => 1
+            ],
+            [
+                'id_usuario' => 2,
+                'login_usuario' => 'Danilo',
+                'nombre_usuario' => 'Danilo Collazos',
+                'email_usuario' => 'danilo@example.com',
+                'celular_usuario' => '3112244556',
+                'direccion_usuario' => 'Cra 15',
+                'password' => Hash::make('123'),
+                'registro_usuario' => now(),
+                'id_municipio_usuario' => 1,
+                'id_perfil_usuario' => 2
             ]
         ];
 

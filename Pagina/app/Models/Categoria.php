@@ -12,4 +12,6 @@ class Categoria extends Model
     public $timestamps = false;
 
     protected $table = 'categorias';
+
+    protected $primaryKey = "id_categoria";
 }

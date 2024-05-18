@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ProductoController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {return view('index');});
@@ -17,6 +18,12 @@ Route::post('postRegister','App\Http\Controllers\LoginController@postRegister')-
 Route::get('logout', 'App\Http\Controllers\LoginController@logout')->name('logout');
 
 
-Route::get('shopCreate', 'App\Http\Controllers\ProductoController@index');
-Route::get('shop', 'App\Http\Controllers\ProductoController@mostrarProducto')->name('shop');
-Route::post('shop', 'App\Http\Controllers\ProductoController@store')->name('shop.post');
+
+Route::get('shop', [ProductoController::class, 'index'])->name('shop');
+Route::post('shopShow', [ProductoController::class, 'show'])->name('shopShow');
+
+Route::middleware(['Admin'])->group(function () {
+    Route::get('shopCreate', [ProductoController::class, 'create']);
+    Route::post('shopPost', [ProductoController::class, 'createPost'])->name('shopPost');
+
+});

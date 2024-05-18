@@ -6,7 +6,7 @@ rounded-lg shadow-lg">
 
     <h1 class="text-3xl text-center font-bold">Crear Producto</h1>
 
-    <form class="mt-4" method="POST" action="{{ route('login.post') }}">
+    <form class="mt-4" method="POST" action="{{ route('shopPost') }}">
         @csrf
 
         <input type="text" class="border border-gray-200 rounded-md bg-gray-200 w-full
@@ -33,11 +33,6 @@ rounded-lg shadow-lg">
         <span class="text-danger">{{$errors->first('cantidad_producto') }}</span>
         @endif
 
-        <input type="text" class="border border-gray-200 rounded-md bg-gray-200 w-full
-        text-lg placeholder-gray-900 p-2 my-2 focus:bg-white" placeholder="Cantidad del Producto" id="cantidad_producto" name="cantidad_producto">
-        @if ($errors->has('cantidad_producto'))
-        <span class="text-danger">{{$errors->first('cantidad_producto') }}</span>
-        @endif
 
         <input type="text" class="border border-gray-200 rounded-md bg-gray-200 w-full
         text-lg placeholder-gray-900 p-2 my-2 focus:bg-white" placeholder="Link de Imagen" id="link" name="link">

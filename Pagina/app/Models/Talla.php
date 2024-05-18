@@ -12,4 +12,5 @@ class Talla extends Model
     public $timestamps = false;
 
     protected $table = 'tallas';
+    protected $primaryKey = "id_talla";
 }

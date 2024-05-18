@@ -13,7 +13,16 @@
                                 <div class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
                                     <ul class="list-unstyled">
                                         <li><a class="btn btn-success text-white" href="#"><i class="far fa-heart"></i></a></li>
-                                        <li><a class="btn btn-success text-white mt-2" href="/detalles"><i class="far fa-eye"></i></a></li>
+
+                                        <form action="{{ route('shopShow') }}" method="POST">
+                                        @csrf
+                                        <input type="hidden" value="{{$pro->id_producto}}" id="id_producto" name="id_producto">
+                                        <li>
+                                            <button class="btn btn-success text-white mt-2" type="submit"><i class="far fa-eye"></i></button>
+                                        </li>
+                                        </form>
+
+                                        
                                     </ul>
                                 </div>
                             </div>

@@ -12,4 +12,6 @@ class Marca extends Model
     public $timestamps = false;
 
     protected $table = 'marcas';
+
+    protected $primaryKey = "id_marca";
 }
