@@ -33,13 +33,13 @@ use App\Models\User;
                         <a class="nav-link" href="/">Inicio</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="about.html">Sobre Nosotros</a>
+                        <a class="nav-link" href="#">Sobre Nosotros</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/tienda">Tienda</a>
+                        <a class="nav-link" href="shop">Tienda</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/contacto">Contacto</a>
+                        <a class="nav-link" href="#">Contacto</a>
                     </li>
                 </ul>
             </div>
@@ -83,7 +83,7 @@ use App\Models\User;
                             Admin
                         </button>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                            <a class="dropdown-item" href="#">Cosas de Admin 1</a>
+                            <a class="dropdown-item" href="shopCreate">Agregar Producto</a>
                             <a class="dropdown-item" href="#">Cosas de Admin 2</a>
                             <a class="dropdown-item" href="#">Cosas de Admin 3</a>
                         </div>
@@ -122,7 +122,7 @@ use App\Models\User;
                 </div>
                 @else
                 <div>
-                    <a class="btn btn-success" style="color: white;" href="#">{{$user->nombre_usuario}}</a>
+                    <a class="btn btn-success" style="color: white;" href="#">{{$user->login_usuario}}</a>
                     <a class="btn btn-success" style="color: white;" href="{{ route('logout')}}">Logout</a>
                 </div>
                 @endguest

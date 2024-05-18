@@ -24,18 +24,20 @@ class LoginController extends Controller
         return view('auth.login');
     }
 
-    public function postRegistration(Request $request)
+    public array $rules = [
+        'login_usuario' => 'required',
+        'nombre_usuario' => 'required',//Unico en todos los usuarios |unique:users, nombre_usuario
+        'email_usuario' => 'required',
+        'celular_usuario' => 'required',
+        'direccion_usuario' => 'required',
+        'id_municipio_usuario' => 'required',
+        'password' => 'required|min:8',
+        'password_confirmation' => 'required|same:password'//Verificar si el campo de contraseña es el mismo
+    ];
+
+    public function postRegister(Request $request)
     {
-        Validator::make($request->all(), [
-            'login_usuario' => 'required',
-            'nombre_usuario' => 'required',//Unico en todos los usuarios |unique:users, nombre_usuario
-            'email_usuario' => 'required',
-            'celular_usuario' => 'required',
-            'direccion_usuario' => 'required',
-            'id_municipio_usuario' => 'required',
-            'password' => 'required|min:8',
-            'password_confirmation' => 'required|same:password'//Verificar si el campo de contraseña es el mismo
-        ])->validate();
+        Validator::make($request->all(), $this->rules)->validate();
 
         $user = new User();
 
@@ -53,7 +55,7 @@ class LoginController extends Controller
         return redirect()->route('login')->withSuccess('Registrado Correctamente :D');
     }
 
-    public function logear(Request $request)
+    public function postLogin(Request $request)
     {
 
         $credentials = [

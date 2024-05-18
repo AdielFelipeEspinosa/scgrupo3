@@ -27,6 +27,7 @@ class CreateProductosTable extends Migration
             $table->integer('costo_producto');
             $table->string('descripcion_producto', 250);
             $table->integer('cantidad_producto');
+            $table->string('link', 200);
             $table->integer('id_marca_producto')->unsigned();
             $table->integer('id_talla_producto')->unsigned();
             $table->integer('id_color_producto')->unsigned();

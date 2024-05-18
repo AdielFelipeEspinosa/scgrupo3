@@ -45,17 +45,16 @@ rounded-lg shadow-lg">
     @endif
 
     <div>
-      <select name="id_municipio_usuario" id="id_municipio_usuario" class="form-select border border-gray-200 rounded-md bg-gray-200 w-full text-lg placeholder-gray-900 p-2 my-2 focus:bg-white ">
-        <option value="" disabled selected >Selecciona el Municipio</option>
+      <select name="id_municipio_usuario" id="id_municipio_usuario" class="form-select">
+        <option value="" disabled selected>Selecciona el Municipio</option>
         @foreach($municipios as $municipio)
         <option value="{{ $municipio->id_municipio }}">{{ $municipio->nombre_municipio }}</option>
         @endforeach
-      </select>
-      @if ($errors->has('id_municipio_usuario'))
-      <div class="invalid-feedback">
-        {{ $errors->first('id_municipio_usuario') }}
-      </div>
-      @endif
+        </select>
+        @if ($errors->has('id_municipio_usuario'))
+        <span class="text-danger">{{
+        $errors->first('id_municipio_usuario') }}</span>
+          @endif
     </div>
 
     <input type="password" class="border border-gray-200 rounded-md bg-gray-200 w-full

@@ -16,7 +16,12 @@ class DatabaseSeeder extends Seeder
             Departamentos::class,
             Municipios::class,
             Perfiles::class,
-            Usuarios::class
+            Users::class,
+            Marcas::class,
+            Colores::class,
+            Tallas:: class,
+            Categorias::class,
+            Productos::class
         ]);
     }
 }
