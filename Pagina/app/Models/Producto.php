@@ -12,21 +12,8 @@ class Producto extends Model
     public $timestamps = false;
     
     protected $table = 'productos';
-    protected $primaryKey = "id_producto";
 
-    /*
-    protected $fillable = [
-        'nombre_producto	',
-        'costo_producto',
-        'descripcion_producto',
-        'cantidad_producto',
-        'link',
-        'id_marca_producto',
-        'id_talla_producto',
-        'id_color_producto',
-        'id_categoria_producto'
-    ];
-    */
+    protected $primaryKey = "id_producto";
 
     public function talla()
     {

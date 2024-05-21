@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Carrito;
 use App\Models\Categoria;
 use App\Models\Color;
 use App\Models\Marca;
@@ -65,6 +66,21 @@ class ProductoController extends Controller
     {
         $producto = Producto::find($request->id_producto);
         return view('Productos.detalles', compact('producto'));
-    } 
+    }
+
+    public function storeCarrito(Request $request)
+    {
+        $carrito = new Carrito();
+        
+        $carrito->id_usuario_carrito = $request->id_usuario_carrito;
+        $carrito->id_producto_carrito = $request->id_producto_carrito;
+        $carrito->cantidadproducto_carrito = $request->cantidadproducto_carrito;
+        $carrito->registro_carrito = now();
+        $carrito->save();
+
+        return redirect()->route('shop')->withSuccess('Producto Registrado Correctamente :D');
+    }
+
+
 
 }

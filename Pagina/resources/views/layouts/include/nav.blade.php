@@ -55,9 +55,26 @@ use App\Models\User;
                 <a class="nav-icon d-none d-lg-inline" href="#" data-bs-toggle="modal" data-bs-target="#templatemo_search">
                     <i class="fa fa-fw fa-search text-dark mr-2"></i>
                 </a>
+                @csrf
+                @guest
                 <a class="nav-icon position-relative text-decoration-none" href="#">
                     <i class="fa fa-fw fa-cart-arrow-down text-dark mr-1"></i>
                 </a>
+                @else
+
+                @php
+                $id_usuario=(Auth::user()->id_usuario);
+                $user=User::find($id_usuario);
+                @endphp
+                <form action="carrito">
+
+                <input type="hidden" value="{{$user->id_usuario}}" id="id_usuario_carrito" name="id_usuario_carrito">
+                <button type="submit">
+                    <i class="fa fa-fw fa-cart-arrow-down text-dark mr-1"></i>
+                </button>
+                </form>
+                @endguest
+
                 <div class="modal fade bg-white" id="templatemo_search" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog modal-lg" role="document">
                         <div class="w-100 pt-1 mb-5 text-right">

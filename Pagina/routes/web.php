@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CarritoController;
 use App\Http\Controllers\ProductoController;
 use Illuminate\Support\Facades\Route;
 
@@ -18,12 +19,15 @@ Route::post('postRegister','App\Http\Controllers\LoginController@postRegister')-
 Route::get('logout', 'App\Http\Controllers\LoginController@logout')->name('logout');
 
 
-
 Route::get('shop', [ProductoController::class, 'index'])->name('shop');
 Route::post('shopShow', [ProductoController::class, 'show'])->name('shopShow');
 
 Route::middleware(['Admin'])->group(function () {
     Route::get('shopCreate', [ProductoController::class, 'create']);
-    Route::post('shopPost', [ProductoController::class, 'createPost'])->name('shopPost');
+    Route::post('shopPost', [ProductoController::class, 'store'])->name('shopPost');
+    Route::post('carritoPost', [ProductoController::class, 'storeCarrito'])->name('carritoPost');
 
 });
+
+
+Route::get('carrito', [CarritoController::class, 'index'])->name('carrito');

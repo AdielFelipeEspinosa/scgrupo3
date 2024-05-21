@@ -49,18 +49,6 @@ class Productos extends Seeder
                 'id_talla_producto' => 1,
                 'id_color_producto' => 1,
                 'id_categoria_producto' => 1
-            ],
-            [
-                'id_producto' => 4,
-                'nombre_producto' => 'Zapato',
-                'costo_producto' => 100,
-                'descripcion_producto' => 'No te compliques',
-                'cantidad_producto' => 5,
-                'link' => "https://img.freepik.com/vector-premium/dibujo-zapato-zapato-amarillo_410516-79247.jpg",
-                'id_marca_producto' => 1,
-                'id_talla_producto' => 1,
-                'id_color_producto' => 1,
-                'id_categoria_producto' => 1
             ]
         ];
 

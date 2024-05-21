@@ -1,6 +1,11 @@
 @extends('layouts.include')
 @section('content')
 
+@php
+use Illuminate\Support\Facades\Auth;
+use App\Models\User;
+@endphp
+
 <section class="bg-light">
     <div class="container pb-5">
         <div class="row">
@@ -54,7 +59,8 @@
                                 <p class="text-muted"><strong>{{$producto->talla->nombre_talla}}</strong></p>
                             </li>
                         </ul>
-                        <form action="" method="GET">
+
+                        <form action="{{ route('carritoPost') }}" method="POST">
                             <input type="hidden" name="product-title" value="Activewear">
                             <div class="row">
                                 <div class="col-auto">
@@ -80,10 +86,24 @@
                                     </ul>
                                 </div>
                             </div>
-                            <div class="row pb-3">
-                                <div class="col d-grid">
-                                    <button type="submit" class="btn btn-success btn-lg" name="submit" value="addtocard">Añadir a la cesta</button>
-                                </div>
+                            <div class="col d-grid">
+                                @csrf
+                                
+                                @guest
+                                <button type="" class="btn btn-success btn-lg" name="submit" value="addtocard">Inicia Sesion</button>
+                                @else
+
+                                @php
+                                $id_usuario=(Auth::user()->id_usuario);
+                                $user=User::find($id_usuario);
+                                @endphp
+
+                                <input type="hidden" value="{{$user->id_usuario}}" id="id_usuario_carrito" name="id_usuario_carrito">
+                                <input type="hidden" value="{{$producto->id_producto}}" id="id_producto_carrito" name="id_producto_carrito">
+                                <input type="hidden" value="1" id="cantidadproducto_carrito" name="cantidadproducto_carrito">
+                                <button type="submit" class="btn btn-success btn-lg" name="submit" value="addtocard">Añadir a la cesta</button>
+
+                                @endguest
                             </div>
                         </form>
 
